@@ -1,7 +1,16 @@
-<template></template>
+<template>
+  <div>
+    <Navbar />
+  </div>
+</template>
 
 <script>
-export default {};
+import Navbar from "../components/Navbar.vue";
+import { ref } from "@nuxtjs/composition-api";
+export default {
+  components: { Navbar },
+  setup(props) {},
+};
 </script>
 
 <style>

@@ -26,6 +26,9 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    {
+      src: '~/plugins/font-awesome'
+    }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -44,8 +47,27 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // 全域 sass 變數設定
-    "@nuxtjs/style-resources"
+    "@nuxtjs/style-resources",
+    'nuxt-fontawesome',
   ],
+
+  fontawesome: {
+    // icon 的標籤使用 <fa>，這邊不設定就會依照 plugin 裡的設定<font-awesome-icon>
+    component: 'fa',
+    imports: [
+      // 引入 fas 所有的icon
+      {
+        set: '@fortawesome/free-solid-svg-icons',
+        icons: ['fas']
+      },
+      // 只引入兩種特定的icon
+      // 此為pro付費版的package，請注意
+      // {
+      //   set: '@fortawesome/pro-regular-svg-icons',
+      //   icons: ['faAdjust', 'faArchive']
+      // }
+    ]
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
